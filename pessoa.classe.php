@@ -1,5 +1,6 @@
 <?php
-    class Pessoa{
+
+class Pessoa{
         public $id_pessoa;
         public $nome_pessoa;
         public $cpf_pessoa;
