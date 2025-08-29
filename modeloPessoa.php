@@ -1,5 +1,6 @@
 <?php
     include_once "controlerPessoa.php";
+    include_once "conexao.php";
 
     class ModelPessoa{
         private $conn;
