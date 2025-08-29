@@ -7,20 +7,20 @@
 </head>
 <body>
     
-    <form action="verificar.php">
+    <form action="controlerPessoa.php" method="post">
 
         <div>
             <Label for="name">Nome:</Label>
-            <input type="text" name="" id="">
+            <input type="text" name="txt_nome" id="txt_nome">
             
         </div>
         <div>
             <Label for="name">CPF:</Label>
-            <input type="text" name="" id="" minlength="11" maxlength="11" required>
+            <input type="text" name="txt_cpf" id="txt_cpf" minlength="11" maxlength="11" required>
         </div>
         <div>
             <Label for="name">Telefone:</Label>
-            <input type="text" name="" id="">
+            <input type="text" name="txt_tel" id="txt_tel">
         </div>
 
         <input type="submit" value="Cadastrar">

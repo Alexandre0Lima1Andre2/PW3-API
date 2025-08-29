@@ -1,26 +1,40 @@
 <?php
     
     class Pessoa{
-        public $id_pessoa;
-        public $nome_pessoa;
-        public $cpf_pessoa;
-        public $telefone_pessoa;
+        public $id;
+        public $nome;
+        public $cpf;
+        public $telefone;
 
-        public function crate(){
-            $sql = "insert into";
+        public function getId(){
+            return $this->id = $id;
         }
-        public function read(){
-            $sql = "select * from ".this->table;
-            
+        public function setID($id){
+            return $this->id = $id;
         }
-        public function update(){
-            $sql = "update ";
-            
-        }
-        public function delet(){
-            $sql = "delet ";
 
+        public function getNome(){
+            return $this->nome = $nome;
         }
+        public function setNome($nome){
+            return $this->nome = $nome;
+        }
+
+        public function getICpf(){
+            return $this->cpf = $cpf;
+        }
+        public function setCpf($cpf){
+            return $this->cpf = $cpf;
+        }
+        
+        public function getTelefone(){
+            return $this->telefone = $telefone;
+        }
+        public function setTelefone($telefone){
+            return $this->telefone =$telefone;
+        }
+
+        
     }
 
 
