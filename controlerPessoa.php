@@ -12,6 +12,11 @@
         $pessoa->setCpf($cpf);
         $pessoa->setTelefone($telefone);
 
+        $model = new ModelPessoa($conn);
+        if(model->readAll($pessoa)){
+            echo "Cadastro conclúdo!";
+        }
+
     }else{
         echo 'Não foi Possível cadastrar!';
     }
