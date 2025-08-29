@@ -1,28 +1,18 @@
 <?php
     include_once "controlerPessoa.php";
     include_once "conexao.php";
-
+    
     class ModelPessoa{
         private $conn;
 
-        public function _construct() {
-        $host = 'localhost';
-        $port="3306"; 
-        $user="root";
-        $senha="root";
-        $banco="Pessoa";
-
-         try {
-            $this->conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch(PDOException $e) {
-            die("Erro de conexão: " . $e->getMessage());
+        public function __construct($conn){
+            $this->conn = $conn;
         }
-    }
+    
 
    
-    public function create($nome, $cpf, $telefone) {
-        $sql = "insert int Pessoa (nome_pessoa, cpf_pessoa, telefone_pessoa) values (:nome, :cpf, :telefone)";
+    public function create($nome, $cpf, $telefone){
+        $sql = "INSERT INTO Pessoa (nome_pessoa, cpf_pessoa, telefone_pessoa) VALUES (:nome, :cpf, :telefone)";
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(":nome", $nome);
         $stmt->bindParam(":cpf", $cpf);
@@ -32,7 +22,7 @@
 
     
     public function readAll() {
-        $sql = "select * from Pessoa";
+        $sql = "SELECT * FROM Pessoa";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

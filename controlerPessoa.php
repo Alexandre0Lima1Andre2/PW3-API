@@ -3,17 +3,17 @@
     include_once 'pessoa.classe.php';
     
     if(!isset($_POST["txt_email"],$_POST["txt_cpf"],$_POST["txt_tel"])){
-        $nome = $_POST['txt_nome'];
-        $cpf = $_POST['txt_cpf'];
-        $telefone = $_POST['txt_tel'];
+        $nome = filter_input(INPUT_POST, 'txt_nome');
+        $cpf = filter_input(INPUT_POST, 'txt_cpf');
+        $telefone = filter_input(INPUT_POST, 'txt_tel');
         
         $pessoa = new Pessoa();
-        $pessoa->setNome($nome);
-        $pessoa->setCpf($cpf);
-        $pessoa->setTelefone($telefone);
+        $_nome = $pessoa->setNome($nome);
+        $_cpf = $pessoa->setCpf($cpf);
+        $_tel = $pessoa->setTelefone($telefone);
 
         $model = new ModelPessoa($conn);
-        if($model->readAll($pessoa)){
+        if($model->create($_nome,$_cpf,$_tel)){
             echo "Cadastro conclúdo!";
         }
 
