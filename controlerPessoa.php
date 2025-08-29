@@ -6,7 +6,7 @@
         $cpf = $_POST['txt_cpf'];
         $cpf = $_POST['txt_tel'];
         
-        $pessoa() = new Pessoa();
+        // $pessoa() = new Pessoa();
         $pessoa->setNome($nome);
         $pessoa->setCpf($cpf);
         $pessoa->setTelefone($telefone);

@@ -26,7 +26,7 @@
         public function setCpf($cpf){
             return $this->cpf = $cpf;
         }
-        
+
         public function getTelefone(){
             return $this->telefone = $telefone;
         }
