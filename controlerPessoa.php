@@ -3,7 +3,7 @@
     include_once 'modeloPessoa.php';
     include_once 'pessoa.classe.php';
     
-    if(!isset($_POST["txt_email"],$_POST["txt_cpf"],$_POST["txt_tel"])){
+    if(isset($_POST["txt_email"],$_POST["txt_cpf"],$_POST["txt_tel"])){
         $nome = filter_input(INPUT_POST, 'txt_nome');
         $cpf = filter_input(INPUT_POST, 'txt_cpf');
         $telefone = filter_input(INPUT_POST, 'txt_tel');
