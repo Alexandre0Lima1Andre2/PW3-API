@@ -28,6 +28,10 @@ include_once 'modeloPessoa.php';
                     <td>{$pessoa['nome_pessoa']}</td>
                     <td>{$pessoa['cpf_pessoa']}</td>
                     <td>{$pessoa['telefone_pessoa']}</td>
+                    <td>
+                        <a href='cadastro.php?id={$pessoa['id_pessoa']}'>Editar</a>
+                        <a href='atualizacao.php?id={$pessoa['id_pessoa']}'>Excluir</a>
+                    </td>
                   </tr>";
         }
         echo "</table>";

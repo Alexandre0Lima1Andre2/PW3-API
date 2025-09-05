@@ -19,8 +19,8 @@ include_once 'conexao.php';
         if(isset($_POST["id"])){
             $id = filter_input(INPUT_POST, 'id');
             if($id){
-                $model = new ModelPessoa($conn);
-                if($model->delete($id)){
+                $model3 = new ModelPessoa($conn);
+                if($model3->delete($id)){
                     echo "<p>Pessoa com ID $id deletada com sucesso!</p>";
                 } else {
                     echo "<p>Erro ao deletar pessoa com ID $id.</p>";
