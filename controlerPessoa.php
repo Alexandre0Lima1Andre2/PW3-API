@@ -1,4 +1,5 @@
 <?php 
+    include_once 'conexao.php';
     include_once 'modeloPessoa.php';
     include_once 'pessoa.classe.php';
     
@@ -14,11 +15,10 @@
 
         $model = new ModelPessoa($conn);
         if($model->create($_nome,$_cpf,$_tel)){
-            echo "Cadastro conclúdo!";
+            echo "$nome cadastrado com sucesso!";
         }
-
     }else{
         echo 'Não foi Possível cadastrar!';
     }
-    
+    echo '<br><a href="cadastro.html" class="btn-ver-mais">Voltar</a>';
 ?>
