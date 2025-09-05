@@ -10,8 +10,7 @@
     <title>Atualizar</title>
 </head>
 <body>
-    <form action="atualização.php" method="post">
-
+    <form action="" method="post">
         <h1>Atualizar Cadastro</h1>
         <div>
             <label for="id">ID da Pessoa:</label>
@@ -58,5 +57,27 @@
             
         ?>
     </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+      
+        $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
+        $nome = filter_input(INPUT_POST, 'txt_nome', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $cpf = filter_input(INPUT_POST, 'txt_cpf', FILTER_SANITIZE_NUMBER_INT);
+        $telefone = filter_input(INPUT_POST, 'txt_tel', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+        
+        if ($id && $nome && $cpf && $telefone) {
+            $model = new ModelPessoa($conn);
+            if ($model->update($id, $nome, $cpf, $telefone)) {
+                echo "<p>Cadastro atualizado com sucesso!</p>";
+            } else {
+                echo "<p>Erro ao atualizar cadastro.</p>";
+            }
+        } else {
+            echo "<p>Preencha todos os campos corretamente.</p>";
+        }
+    }
+    ?>
 </body>
 </html>
